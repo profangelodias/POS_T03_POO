@@ -5,6 +5,22 @@ public class Conta {
 	int numero;
 	double saldo;
 	
+	//Criando construtores
+	public Conta() {
+		System.out.println("A conta vazia foi criada!");
+	}
+	public Conta(int numero, double saldo) {
+		this.numero = numero;
+		this.saldo = saldo;
+	}
+	public Conta(int numero) {
+		this.numero = numero;
+		this.saldo = 1;
+		System.out.println("Seu saldo inicial é: R$" 
+		+ this.saldo + " " + "na sua conta de número: " 
+				+ this.numero);
+	}
+	
 	//Métodos / Comportamentos
 	boolean sacar(double val) {
 		//Lógica para retornar booleano caso o saque
