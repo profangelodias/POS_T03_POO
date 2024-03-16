@@ -2,7 +2,7 @@ package tech.angelofdiasg.contas;
 
 public class ContaEspecial extends Conta{
 	
-	double limite;
+	private double limite;
 	
 	public ContaEspecial() {
 		System.out.println("Conta especial vazia criada!");
@@ -16,14 +16,21 @@ public class ContaEspecial extends Conta{
 		this.limite = limite;
 	}
 	
-	boolean sacar(double val) {
-		if(this.saldo >= val) {
-			this.saldo = this.saldo - val;
+	public boolean sacarEspec(double val) {
+		if(getSaldo() >= val) {
+			double novoSaldo = getSaldo() - val;
+			setSaldo(novoSaldo);
 			return true;
 		} else {
 			System.out.println("Não tem saldo suficiente!");
 			return false;
 		}
+	}
+	public double getLimite() {
+		return limite;
+	}
+	public void setLimite(double limite) {
+		this.limite = limite;
 	}
 
 }
