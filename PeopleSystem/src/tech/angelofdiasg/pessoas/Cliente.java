@@ -7,7 +7,6 @@ import java.time.LocalDate;
 public class Cliente extends Pessoa{
     private String codigo;
     private Profissao profissao;
-
     public Cliente() {
         System.out.println("Criando cliente" +
                 " sem atributos!");

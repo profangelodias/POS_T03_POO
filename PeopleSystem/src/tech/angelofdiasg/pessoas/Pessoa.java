@@ -21,6 +21,7 @@ public class Pessoa {
         this.telsContato = telsContato;
     }
     public void cadastrar(){
+
     }
     public int obterIdade(){
         int idade = 0;
