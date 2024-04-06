@@ -1,9 +1,11 @@
 package tech.angelofdiasg.contas;
 
+import java.util.Random;
+
 public class Conta {
 	//Variáveis / Estados
-	int numero;
-	double saldo;
+	private int numero;
+	private double saldo;
 	
 	//Criando construtores
 	public Conta() {
@@ -21,12 +23,20 @@ public class Conta {
 				+ this.numero);
 	}
 	
+	public Conta(double valDeposito) {
+		depositar(valDeposito);
+		//Lógica de número automático
+		// criar um objeto da classe Random
+        Random random = new Random();
+        // gerar um número aleatório de 0.0 até 0.99...
+        this.numero = random.nextInt();
+	}
 	//Métodos / Comportamentos
-	boolean sacar(double val) {
+	public boolean sacar(double valor) {
 		//Lógica para retornar booleano caso o saque
 		//aconteça
-		if(this.saldo >= val) {
-			this.saldo = this.saldo - val;
+		if(this.saldo >= valor) {
+			this.saldo = this.saldo - valor;
 			return true;
 		} else {
 			//Lógica para retornar booleano caso o saque
@@ -36,7 +46,7 @@ public class Conta {
 		}
 	}
 	
-	boolean depositar(double val) {
+	public boolean depositar(double val) {
 		if(val < 0) {
 			return false;
 		} else {
@@ -44,10 +54,19 @@ public class Conta {
 			return true;
 		}
 	}
-	
-	//Retorna o saldo do objeto (Conta)
-	double getSaldo(){
+	public int getNumero() {
+		return numero;
+	}
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+	public double getSaldo() {
 		return this.saldo;
 	}
-
+	public void setSaldo(double novoSaldo) {
+		this.saldo = novoSaldo;
+	}
+	
+	//Retorna os estados do objeto (Conta)
+	
 }
